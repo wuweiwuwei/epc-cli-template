@@ -5,7 +5,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: () => import('@pages/页面名称/views/index.vue'),
+      component: () => import('@pages/页面名称/views/home/index.vue'),
       meta: { title: '首页' }
     }
   ]
