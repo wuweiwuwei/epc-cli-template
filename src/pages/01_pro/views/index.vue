@@ -1,6 +1,6 @@
 <template>
   <h3>这是首页</h3>
-  <el-button type="primary" @click="handleTestA">BTN-EL-PLUS</el-button>
+  <el-button type="primary" @click="handleTestA">BTN-EL-PLUS123333</el-button>
   <m-button>M-BTN</m-button>
   <el-button type="warning" @click="handleTest">数据请求测试</el-button>
   <div>

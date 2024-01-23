@@ -39,6 +39,9 @@ export default defineConfig({
     host: 'localhost', // 指定服务器主机名
     port: 8090, // 指定服务器端口
     hmr: true,
+    watch: {
+      usePolling: true // 修复HMR热更新失效
+    },
     open: '/', // 在服务器启动时自动在浏览器中打开应用程序
     https: false, // 是否开启 https
     proxy: {
