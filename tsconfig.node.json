@@ -1,17 +1,14 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
-  "include": [
-    "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*"
-  ],
   "compilerOptions": {
     "composite": true,
-    "noEmit": true,
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["node"]
-  }
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "paths": {
+      "@/*": ["src/*"] //解决引入报错  找不到模块“@/xxxx” 或其相应的类型声明
+    }
+  },
+  "exclude": ["vite.config.ts"]
 }
