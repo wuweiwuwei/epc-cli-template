@@ -63,5 +63,6 @@
     "overrides": {
       "bin-wrapper": "npm:bin-wrapper-china"
     }
-  }
+  },
+  "author": "aobing"
 }

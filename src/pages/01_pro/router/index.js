@@ -5,13 +5,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: () => import('@Project/02_pro/views/index.vue'),
+      component: () => import('@pages/01_pro/views/index.vue'),
       meta: { title: '首页' }
     }
   ]
 })
 
 router.afterEach((to, from, next) => {
+  console.log('🚀 = ABC.LOG = 🚀 ~ from, next: ', from, next)
   //遍历meta改变title
   if (to.meta.title) {
     document.title = to.meta.title

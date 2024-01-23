@@ -16,7 +16,7 @@
 │   ├── components   //公共组件
 │   ├── store        //pinia 共享状态存储库
 │   ├── utils        //公共方法
-│   └── Projects     //多页面文件夹
+│   └── pages     //多页面文件夹
 ├── types  //ts 声明文件
 ├── .env.development   //开发环境-环境变量
 ├── .env.production    //生产环境-环境变量
@@ -56,7 +56,7 @@
 
 ```js
 npm run new:page
-//然后会提示：请输入要生成的'页面名称:页面描述'、会生成在 /src/Project 目录下
+//然后会提示：请输入要生成的'页面名称:页面描述'、会生成在 /src/pages 目录下
 //注意： 有两个页面模版，如果要用ts，可以执行  npm run new:page --ts
 例如输入：mypage:我的页面
 //完成后 会在 scripts/multiPages.json 中生成对应的数据 后期删除需要删除对应的数据来保持一致 内容数据如下：

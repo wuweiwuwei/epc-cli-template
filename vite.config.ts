@@ -26,13 +26,13 @@ const getEnterPages = () => {
     errorLog('-----------------------不存在此页面，请检查页面名称！-------------------------')
 
   return {
-    [npm_config_page]: path.resolve(__dirname, `src/Project/${npm_config_page}/index.html`)
+    [npm_config_page]: path.resolve(__dirname, `src/pages/${npm_config_page}/index.html`)
   }
 }
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: path.resolve(__dirname, `./src/Project/${npm_config_page}`),
+  root: path.resolve(__dirname, `./src/pages/${npm_config_page}`),
   base: '/',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
   server: {
@@ -85,7 +85,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.join(__dirname, './src'),
-      '@Project': path.join(__dirname, './src/Project')
+      '@pages': path.join(__dirname, './src/pages')
     }
   },
   build: {

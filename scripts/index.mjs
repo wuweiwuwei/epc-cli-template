@@ -4,7 +4,7 @@
  * @email        : 3109952@qq.com
  * @Date         : 2024-01-19 16:33:11
  * @LastEditors  : AoBingChi
- * @LastEditTime : 2024-01-22 11:12:39
+ * @LastEditTime : 2024-01-23 16:10:48
  * @Version      : 1.0.0
  */
 import chalk from 'chalk'
@@ -15,7 +15,7 @@ const resolve = (__dirname, ...file) => path.resolve(__dirname, ...file)
 const log = (message) => console.log(chalk.green(`${message}`))
 const successLog = (message) => console.log(chalk.blue(`${message}`))
 const errorLog = (error) => console.log(chalk.red(`${error}`))
-log('请输入要生成的"页面名称:页面描述"、会生成在 /src/Project 目录下')
+log('请输入要生成的"页面名称:页面描述"、会生成在 /src/pages 目录下')
 process.stdin.on('data', async (chunk) => {
   // 获取输入的信息
   const content = String(chunk).trim().toString()
@@ -28,8 +28,8 @@ process.stdin.on('data', async (chunk) => {
   const inputName = content.split(':')[0]
   const inputDesc = content.split(':')[1] || inputName
   const isTs = process.env.npm_config_ts
-  successLog(`将在 /src/Project 目录下创建 ${inputName} 文件夹`)
-  const targetPath = resolve('./src/Project', inputName)
+  successLog(`将在 /src/pages 目录下创建 ${inputName} 文件夹`)
+  const targetPath = resolve('./src/pages', inputName)
   // 判断同名文件夹是否存在
   const pageExists = fs.existsSync(targetPath)
   if (pageExists) {
@@ -70,7 +70,7 @@ process.stdin.on('data', async (chunk) => {
       'utf-8',
       (err) => {
         if (err) throw err
-        // 在project中建立新的目录
+        // 在pages中建立新的目录
         fs.mkdirSync(targetPath)
         const sourcePath = resolve(
           isTs ? './scripts/template-ts' : './scripts/template'
