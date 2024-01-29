@@ -27,7 +27,9 @@
   "dependencies": {
     "@cbim-epc-magic/components": "^1.0.2",
     "@cbim-epc-magic/styles": "^1.0.2",
-    "@cbim-epc-magic/utils": "^2.0.0",
+    "@cbim-epc-magic/utils": "^1.0.5",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/core": "^17.6.1",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "axios": "^1.6.5",

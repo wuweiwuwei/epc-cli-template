@@ -78,7 +78,7 @@ npm run dev --page=页面名称
 
 > 打包指定子项目
 
-正式环境打包：
+正式环境打包： 
 
 ```js
 npm run build --page=页面名称
