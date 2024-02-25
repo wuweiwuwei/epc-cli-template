@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import '@/assets/index.scss'
+import '@/assets/reset.css'
 
 // element-plus 组件库
 import ElementPlus from 'element-plus' 
