@@ -12,8 +12,11 @@
 │   ├── index.mjs        //创建子页面的脚本
 │   └── multiPages.json  //子页面描述说明集合文件
 ├── src
-│   ├── arrets       //公共静态资源
+│   ├── assets       //公共静态资源
 │   ├── components   //公共组件
+│   ├── common
+    │   ├── Api   //数据请求
+    │   ├── Types  //类型定义
 │   ├── store        //pinia 共享状态存储库
 │   ├── utils        //公共方法
 │   └── pages     //多页面文件夹
