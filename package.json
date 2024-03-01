@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode development",
-    "build": "vite build",
     "build:test": "vite build --mode test",
     "build:dev": "vite build --mode development",
     "build:pro": "vite build --mode production",
+    "build:pre": "vite build --mode pre",
     "new:page": "node ./scripts/index.mjs",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:script": "eslint --fix --ext .js --ext .ts --ext .vue src/",

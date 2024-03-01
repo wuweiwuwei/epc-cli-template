@@ -33,7 +33,7 @@ const getEnterPages = () => {
 // https://vitejs.dev/config/
 export default defineConfig({
   // root: ,
-  root:  npm_config_page? path.resolve(__dirname, `./src/pages/${npm_config_page}`) : './src/pages',
+  root: npm_config_page ? path.resolve(__dirname, `./src/pages/${npm_config_page}`) : './src/pages',
   base: '/',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
   server: {
@@ -90,7 +90,8 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: path.resolve(__dirname, `dist/${npm_config_page}`), // 指定输出路径
+    // outDir: path.resolve(__dirname, `dist/${npm_config_page}`), // 指定输出路径
+    outDir: path.resolve(__dirname, `dist/`), // 指定输出路径
     assetsInlineLimit: 4096, //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求
     emptyOutDir: true, //Vite 会在构建时清空该目录
     rollupOptions: {
