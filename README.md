@@ -38,21 +38,25 @@
 > 安装依赖
 
 ```
-  //全局安装 pnpm
+  // 全局安装 pnpm （使用npm可忽略此步骤）
   npm install -g pnpm
 
-  //切换淘宝源
+  // 北京网络极差，所以建议
+  // 方法一：切换淘宝源
   pnpm config set registry https://registry.npmmirror.com/
 
-  // 或者使用 nrm 切换 npm 源
+  // 方法二：使用 nrm 切换 npm 源
   npm install -g nrm
   nrm ls
   nrm use taobao
 
-  pnpm i
+  // 安装依赖
+  pnpm i 或 npm i
 ```
 
 > 创建子项目
+
+注：创建子项目一定要使用命令，不能手动创建，否则会导致多页面配置文件出错
 
 ```js
 npm run new:page
@@ -78,10 +82,12 @@ npm run dev --page=页面名称
 
 > 打包指定子项目
 
-正式环境打包： 
+注：这里打包用的命令是 npm 并非 pnpm， 因为 vite 打包命令是 npm 脚本
+
+开发环境打包： 
 
 ```js
-npm run build --page=页面名称
+npm run build:dev --page=页面名称
 ```
 
 测试环境打包：
@@ -89,3 +95,10 @@ npm run build --page=页面名称
 ```js
 npm run build:test --page=页面名称
 ```
+
+正式环境打包： 
+
+```js
+npm run build:pro --page=页面名称
+```
+
