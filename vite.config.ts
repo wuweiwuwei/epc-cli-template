@@ -44,10 +44,9 @@ export default defineConfig({
     https: false, // 是否开启 https
     proxy: {
       '^/api': {
-        target: 'http://v.juhe.cn/toutiao', //  代理接口
-        // target: 'http://api.china-bim.cn/mock/179/', //  yapi mock
+        target: 'http://xbom-dev.cbim.org.cn/admin-uc', //  代理接口
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, '/api')
       }
     }
   },

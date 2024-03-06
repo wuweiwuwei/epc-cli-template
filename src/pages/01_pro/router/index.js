@@ -12,7 +12,7 @@ const router = createRouter({
 })
 
 router.afterEach((to, from, next) => {
-  console.log('🚀 = ABC.LOG = 🚀 ~ from, next: ', from, next)
+  // console.log('🚀 = ABC.LOG = 🚀 ~ from, next: ', from, next)
   //遍历meta改变title
   if (to.meta.title) {
     document.title = to.meta.title

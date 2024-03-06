@@ -81,7 +81,11 @@ npm run new:page
 然后在vite.config.ts中可以获取参数来进行打包对应的项目
 用 process.env.npm_config_page 获取参数 */
 npm run dev --page=页面名称
+
 ```
+
+注：如果想一次性启动多个单页，直接运行命令   npm run dev 
+不是很建议一次运行多个单页，占用内存，不过两个单页联合测试，只能同时运行多个单页。
 
 > 打包指定子项目
 
