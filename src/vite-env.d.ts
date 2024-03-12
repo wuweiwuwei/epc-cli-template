@@ -8,5 +8,8 @@ declare module '*.vue' {
 }
 
 declare module '@'
+<<<<<<< HEAD
 
 declare module '@cbim-epc-magic/utils'
+=======
+>>>>>>> 4603f4cdb269f3726905af56ad1db8773ed5b612

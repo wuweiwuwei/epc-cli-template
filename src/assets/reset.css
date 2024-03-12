@@ -42,8 +42,14 @@ select {
 }
 
 body {
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+=======
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+>>>>>>> 4603f4cdb269f3726905af56ad1db8773ed5b612
   background: #f2f2f2;
   -webkit-text-size-adjust: none;
 
@@ -90,8 +96,14 @@ button,
 input,
 select,
 textarea {
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+=======
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial,
+    sans-serif;
+>>>>>>> 4603f4cdb269f3726905af56ad1db8773ed5b612
   vertical-align: middle;
   outline: none;
 }
@@ -191,6 +203,12 @@ p {
   color: var(--el-color-primary) !important;
 }
 
+<<<<<<< HEAD
 :focus {
   outline: none;
+=======
+#app {
+  height: 100%;
+  width: 100%;
+>>>>>>> 4603f4cdb269f3726905af56ad1db8773ed5b612
 }
