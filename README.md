@@ -27,6 +27,9 @@
 ├── src
 │   ├── arrets       // 公共静态资源
 │   ├── components   // 公共组件
+│   ├── common      // 通用请求文件夹
+│       ├── api     // 请求接口封装
+│       └── types   // 数据类型统一放置
 │   ├── store        // pinia 共享状态存储库
 │   ├── utils        // 公共方法
 │   └── Project     // 多页面文件夹
