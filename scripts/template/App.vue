@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<template>
-  首页
-  <router-view></router-view>
-</template>
-<script setup></script>
-<style lang="scss">
-#app {
-  font-family: PingFangSC-Regular;
-}
-</style>
-=======
 <!--
  * @Description  : 
  * @Author       : AoBingChi
@@ -39,4 +27,3 @@
 import { ArrowLeftBold } from '@element-plus/icons-vue'
 </script>
 <style scoped lang="scss"></style>
->>>>>>> 4603f4cdb269f3726905af56ad1db8773ed5b612
