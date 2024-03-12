@@ -3,9 +3,9 @@
   box-sizing: border-box;
 }
 
-    .amap-sug-result {
-      display: none !important;
-    }
+.amap-sug-result {
+  display: none !important;
+}
 body,
 html {
   height: 100%;
@@ -178,9 +178,9 @@ select {
   cursor: pointer;
 }
 
-body {
-  /*min-width: 1280px;*/
-}
+/* body {
+  min-width: 1280px;
+} */
 ol,
 ul,
 dl,
@@ -189,4 +189,8 @@ p {
 }
 .el-select-dropdown__item.selected .el-icon {
   color: var(--el-color-primary) !important;
+}
+
+:focus {
+  outline: none;
 }
