@@ -4,7 +4,7 @@
  * @email        : 3109952@qq.com
  * @Date         : 2024-02-28 14:46:17
  * @LastEditors  : AoBingChi
- * @LastEditTime : 2024-03-08 16:32:59
+ * @LastEditTime : 2024-03-12 13:58:28
  * @Version      : 1.0.0
 -->
 <template>
@@ -23,7 +23,7 @@
     </template>
   </MBox>
 </template>
-<script setup>
+<script lang="ts" setup>
 import { ArrowLeftBold } from '@element-plus/icons-vue'
 </script>
 <style scoped lang="scss"></style>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
       name="viewport"
     />
     <title>子项目导航</title>
@@ -11,22 +11,26 @@
       * {
         padding: 0;
         margin: 0;
+        background: #fefefe;
       }
       body {
         padding: 16px;
       }
       h1 {
-        margin-bottom: 18px;
+        margin-bottom: 10px;
       }
       a {
-        display: block;
+        display: inline-block;
         margin-bottom: 6px;
+        margin-right:20px;
+        color: #232323;
       }
     </style>
   </head>
 
   <body>
     <h1>多页面菜单</h1>
+    
     <script>
       function loadJSON(callback) {
         var xhr = new XMLHttpRequest()
@@ -42,9 +46,8 @@
 
       loadJSON(function (data) {
         data.forEach((item) => {
-          console.log(item)
           const link = document.createElement('a')
-          link.href = `./${item.chunk}/index.html`
+          link.href = `./${item.chunk}/#/`
           link.textContent = `${item.chunk} | ${item.chunkName}` // 设置显示的文本内容
           // 将 <a> 元素追加到容器元素中
           document.body.appendChild(link)

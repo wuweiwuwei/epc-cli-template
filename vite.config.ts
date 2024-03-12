@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite' //组件自动按需引入
 import { VantResolver } from 'unplugin-vue-components/resolvers'
-import autoImport from 'unplugin-auto-import/vite' //自动导入 Composition API
+// import autoImport from 'unplugin-auto-import/vite' //自动导入 Composition API 开启后会和老吴的样式冲突，暂时请不要开启
 import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
 import compression from 'vite-plugin-compression' //gzip/br 压缩
 import path from 'path'
@@ -43,22 +43,36 @@ export default defineConfig({
   root: path.resolve(__dirname, `./src/Project/${npm_config_page}`),
   base: './',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
+  server: {
+    host: 'localhost', // 指定服务器主机名
+    port: 9090, // 指定服务器端口
+    hmr: true,
+    open: true, // 在服务器启动时自动在浏览器中打开应用程序
+    https: false, // 是否开启 https
+    proxy: {
+      '^/api': {
+        target: 'http://xbom-dev.cbim.org.cn/admin-uc', //  代理接口
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api')
+      }
+    }
+  },
   plugins: [
     vue(),
     Components({
       resolvers: [VantResolver()]
     }),
-    autoImport({
-      imports: ['vue', 'vue-router', 'pinia'],
-      dts: path.resolve(__dirname, './auto-import.d.ts'),
-      eslintrc: {
-        // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
-        enabled: false,
-        // 生成文件地址和名称
-        filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
-        globalsPropValue: true
-      }
-    }),
+    // autoImport({
+    //   imports: ['vue', 'vue-router', 'pinia'],
+    //   dts: path.resolve(__dirname, './auto-import.d.ts'),
+    //   eslintrc: {
+    //     // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
+    //     enabled: false,
+    //     // 生成文件地址和名称
+    //     filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
+    //     globalsPropValue: true
+    //   }
+    // }),
     visualizer(),
     // gzip格式
     compression({
@@ -102,12 +116,5 @@ export default defineConfig({
         }
       }
     }
-  },
-  server: {
-    host: 'localhost', // 指定服务器主机名
-    port: 8880, // 指定服务器端口
-    hmr: true,
-    open: true, // 在服务器启动时自动在浏览器中打开应用程序
-    https: false // 是否开启 https
   }
 })

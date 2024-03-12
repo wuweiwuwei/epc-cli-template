@@ -1,3 +1,12 @@
+/*
+ * @Description  : 
+ * @Author       : AoBingChi
+ * @email        : 3109952@qq.com
+ * @Date         : 2024-03-07 14:11:10
+ * @LastEditors  : AoBingChi
+ * @LastEditTime : 2024-03-07 14:33:19
+ * @Version      : 1.0.0
+ */
 import fs from 'fs'
 import chalk from 'chalk'
 //设置chalk等级 解决颜色无效问题

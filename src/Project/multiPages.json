@@ -1,5 +1,1 @@
-[
-  { "chunk": "agreement", "chunkName": "协议静态页面" },
-  { "chunk": "pageone", "chunkName": "测试页面" },
-  { "chunk": "pagetwo", "chunkName": "测试页面2" }
-]
+[{"chunk":"01_page","chunkName":"test page01"},{"chunk":"02_page","chunkName":"test page02"}]

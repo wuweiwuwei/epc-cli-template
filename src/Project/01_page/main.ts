@@ -23,7 +23,7 @@ if (window.location.host.includes('localhost')) {
 
 const app = createApp(App)
 app
-  .use(router)
   .use(ElementPlus, { locale: zhCn })
   .use(MagicCom, {})
+  .use(router)
   .mount('#app')
