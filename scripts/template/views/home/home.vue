@@ -1,3 +1,12 @@
+<!--
+ * @Description  : 
+ * @Author       : AoBingChi
+ * @email        : 3109952@qq.com
+ * @Date         : 2024-03-12 15:35:20
+ * @LastEditors  : AoBingChi
+ * @LastEditTime : 2024-03-14 12:07:45
+ * @Version      : 1.0.0
+-->
 <template>
   <div>test</div>
 </template>

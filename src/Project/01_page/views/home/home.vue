@@ -4,7 +4,7 @@
  * @email        : 3109952@qq.com
  * @Date         : 2024-03-12 11:42:01
  * @LastEditors  : AoBingChi
- * @LastEditTime : 2024-03-13 17:41:24
+ * @LastEditTime : 2024-03-14 10:31:02
  * @Version      : 1.0.0
 -->
 <template>
@@ -15,7 +15,7 @@
     </template>
   </MContentHeader>
   <div class="warp-page">
-    <el-button type="success" @click="handleTestApi">测试</el-button>
+    <el-button type="success" @click="handleTestApi">测试1</el-button>
     <el-button type="success" @click="handleTestApiB"> 接口请求测试</el-button>
     <h3>yuiooooooo</h3>
   </div>
@@ -24,8 +24,7 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue'
 // import Api from '../../../../common/api/index'
-// import * as ss from '@cbim-epc-magic/utils'
-import * as pp from 'iqiii'
+import * as MagicUtils from '@cbim-epc-magic/utils'
 /**
  * @description  : 测试方法
  * @return        {*}
@@ -48,7 +47,7 @@ const handleTestApiB = async () => {
 }
 onMounted(() => {
   console.log(1)
-  console.log(pp.add(90, 2))
+  console.log(MagicUtils.add(90, 2))
 })
 </script>
 
