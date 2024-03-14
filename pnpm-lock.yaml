@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.0.8
     version: 1.0.8(@babel/core@7.24.0)(@vue/compiler-sfc@3.4.21)
   '@cbim-epc-magic/utils':
-    specifier: ^1.0.14
-    version: 1.0.14
+    specifier: ^1.0.15
+    version: 1.0.15
   '@commitlint/cli':
     specifier: ^17.8.1
     version: 17.8.1
@@ -344,8 +344,8 @@ packages:
       - supports-color
     dev: false
 
-  /@cbim-epc-magic/utils@1.0.14:
-    resolution: {integrity: sha512-T9Oy6hF3K5w5Bb6ZbIh//239hA79jpg2XbQvLnuN+DFZsIfodWXI/JgGOnTtPpCPB5o2HnKGltfnTT4wzcU33w==}
+  /@cbim-epc-magic/utils@1.0.15:
+    resolution: {integrity: sha512-hMmaikM+mSLlFYsuZBYz+epCC7RViZz7gTmxgw+YyrdJATxGtmePtitPevEl2PsfwMxhQ4kq7UYr4RJKt2Qlog==}
     dev: false
 
   /@commitlint/cli@17.8.1:
@@ -1670,8 +1670,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001596
-      electron-to-chromium: 1.4.695
+      caniuse-lite: 1.0.30001597
+      electron-to-chromium: 1.4.704
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: false
@@ -1764,8 +1764,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite@1.0.30001596:
-    resolution: {integrity: sha512-zpkZ+kEr6We7w63ORkoJ2pOfBwBkY/bJrG/UZ90qNb45Isblu8wzDgevEOrRL1r9dWayHjYiiyCMEXPn4DweGQ==}
+  /caniuse-lite@1.0.30001597:
+    resolution: {integrity: sha512-7LjJvmQU6Sj7bL0j5b5WY/3n7utXUJvAe1lxhsHDbLmwX9mdL86Yjtr+5SRCyf8qME4M7pU2hswj0FpyBVCv9w==}
     dev: false
 
   /caw@2.0.1:
@@ -2328,8 +2328,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.4.695:
-    resolution: {integrity: sha512-eMijZmeqPtm774pCZIOrfUHMs/7ls++W1sLhxwqgu8KQ8E2WmMtzwyqOMt0XXUJ3HTIPfuwlfwF+I5cwnfItBA==}
+  /electron-to-chromium@1.4.704:
+    resolution: {integrity: sha512-OK01+86Qvby1V6cTiowVbhp25aX4DLZnwar+NocAOXdzKAByd+jq5156bmo4kHwevWMknznW18Y/Svfk2dU91A==}
     dev: false
 
   /element-plus@2.6.0(vue@3.4.21):

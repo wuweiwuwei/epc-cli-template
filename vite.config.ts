@@ -31,10 +31,7 @@ const getEnterPages = () => {
     process.exit()
   }
   return {
-    [npm_config_page]: path.resolve(
-      __dirname,
-      `src/Project/${npm_config_page}/index.html`
-    )
+    [npm_config_page]: path.resolve(__dirname, `src/Project/${npm_config_page}/index.html`)
   }
 }
 
@@ -88,6 +85,12 @@ export default defineConfig({
     //   deleteOriginFile: false
     // })
   ],
+  define: {
+    'process.env': {}
+  },
+  // define: {
+  //   'process.env.VITE_APP_BASE_URL': `"${process.env.VITE_APP_BASE_URL}"`
+  // },
   resolve: {
     alias: {
       '@': path.join(__dirname, './src'),
@@ -107,11 +110,7 @@ export default defineConfig({
         compact: true,
         manualChunks: (id: string) => {
           if (id.includes('node_modules')) {
-            return id
-              .toString()
-              .split('node_modules/')[1]
-              .split('/')[0]
-              .toString() // 拆分多个vendors
+            return id.toString().split('node_modules/')[1].split('/')[0].toString() // 拆分多个vendors
           }
         }
       }

@@ -28,7 +28,7 @@
   "dependencies": {
     "@cbim-epc-magic/components": "^1.0.8",
     "@cbim-epc-magic/styles": "^1.0.8",
-    "@cbim-epc-magic/utils": "^1.0.14",
+    "@cbim-epc-magic/utils": "^1.0.15",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@element-plus/icons-vue": "^2.3.1",

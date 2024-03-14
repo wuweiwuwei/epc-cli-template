@@ -4,7 +4,7 @@
  * @email        : 3109952@qq.com
  * @Date         : 2024-03-12 11:42:01
  * @LastEditors  : AoBingChi
- * @LastEditTime : 2024-03-12 13:41:57
+ * @LastEditTime : 2024-03-14 09:16:21
  * @Version      : 1.0.0
 -->
 <template>
@@ -39,7 +39,7 @@ const handleTestApiB = async () => {
   const res = await Api.testApi_01pro.AjaxTestB({ name: '' })
   console.log('res：', res)
 }
-onMounted(() => {})
+// onMounted(() => {})
 </script>
 
 <style scoped lang="scss"></style>
