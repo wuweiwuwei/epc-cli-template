@@ -9,6 +9,10 @@
 - 配置完善的工程化工具，包括 esint、prettier
 - 配置一些基本的插件，例如自动引入 Composition API、打包 size 分析工具、打包压缩工具
 
+## 模板约定
+
+- 模板使用了utils方法库，内部二次封装了axios，方便进行请求的同意处理，如果需要设定axios的baseUrl（也就是你所想请求服务的基础路径），请在环境变量文件内配置 VITE_APP_BASE_URL
+
 ## 1.项目结构 📖
 
 ```

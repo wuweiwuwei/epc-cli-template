@@ -11,27 +11,216 @@
       * {
         padding: 0;
         margin: 0;
-        background: #fefefe;
       }
-      body {
-        padding: 16px;
+      html{
+        height: 100%;
       }
-      h1 {
-        margin-bottom: 10px;
+      body{
+        font-size: 13px;
+        font-family: jan, "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        height: 100%;
+        background: #d1d9df;
       }
-      a {
-        display: inline-block;
-        margin-bottom: 6px;
-        margin-right:20px;
-        color: #232323;
+      .header {
+        flex: 0 0 auto;
+        background-color: #343a40;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 12px 30px;
+        color:#fff;
+      }
+     
+      .header .logo {   
+        width: 26px;
+        height: 26px; 
+        background: url('../assets/sm_logo.png') center center no-repeat;
+        background-size: 26px;
+        vertical-align: middle;
+        border-style: none;
+        max-width: 100%;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+        position: relative;
+        top: -3px;
+      }
+      .header .title{
+        font-size: 14px;
+        padding-left: 12px;
+        /* color: rgba(255, 255, 255, 0.5); */
+        /* color: #f57e42; */
+        /* color: #debe43; */
+      }
+      .header .desc{
+        padding-left: 8px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .main {
+        width: 100%;
+        height: calc(100% - 50px - 32px);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 16px 0;
+      }
+      .main .card{
+        width: 700px;
+        height: 100%;
+        background: #a21813;
+        border-radius: 2px;
+        border: 0px solid rgba(0, 0, 0, 0.125);
+        box-shadow: 0 1px 3px rgba(26,26,26,.1);
+      }
+      .main .card .card-header, .explain-warp .title{
+        height: 40px;
+        line-height: 40px;
+        font-size: 13px;
+        padding-left: 12px;
+        background-image: none;
+        background-color: #f6f6f6;
+        border-color: #e9ecef;
+        border-bottom: 1px solid #dee2e6;
+        border-radius: 2px 2px 0 0;
+        color: #495057;
+      }
+      .main .card .card-body, .text-content{
+        height: calc(100% - 40px);
+        background: #fff;
+      } 
+      .main .card .card-body .item{
+        padding: 10px 16px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+      }
+      .main .card .card-body .item:hover{
+        background: #fdfdfd;
+        border-left: 2px #aab0c6 solid;
+        margin-left: -2px;
+      }
+      .main .card .card-body .item .item-left {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        /* border: 1px solid rgba(0, 0, 0, 0.225); */
+        margin-right: 12px;
+        background: #fafafa;
+      }
+      .main .card .card-body .item .item-right .item-title span {
+        color: #0e990b;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+      .main .card .card-body .item .item-right .item-title a {
+        color: #007ef7;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+      .main .card .card-body .item .item-right .item-detail {
+        color: #748594;
+        word-break: break-all;
+        word-wrap: break-word;
+        font-size: 12px;
+      }
+      .main .card .card-body .jan-hr{
+        width: 670px;
+        margin: auto;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .main .explain{
+        margin-left: 12px;
+        width: 220px;
+        height: 100%;
+        /* background: #a23813; */
+      }
+      
+      .main .explain .top-warp{
+        margin-bottom: 12px;
+      }
+      .main .explain .explain-warp{
+        height: calc(100% - 32px - 12px - 20px);
+      }
+      .main .explain .explain-warp .text-content{
+        padding: 10px;
+        font-size: 85%;
+        font-weight: 400;
+        line-height: 2 !important;
+      }
+      .main .explain .explain-warp .text-content div{margin-bottom: 4px;}
+      .btn{
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      .btn-block {
+        display: block;
+      }
+      .btn-primary {
+        color: #fff;
+        background-color: #5f8ece;
+        border-color: #5f8ece;
+        box-shadow: 0 1px 3px rgba(26,26,26,.1);
+      }
+      .btn-primary:hover, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+          background-color: #699fea;
+          border-color: #699fea;
+      }
+      .btn-primary:hover {
+        color: #fff;
+      } 
+      a:link, a:visited, a:hover {
+          text-decoration: none;
       }
     </style>
   </head>
 
   <body>
-    <h1>多页面菜单</h1>
+    <div class="header">
+      <div class="logo"></div>
+      <div class="title">【七星平台】多单页工程主目录</div>
+      <!-- <div class="desc">by jijc</div> -->
+    </div>
     
+    <div class="main">
+      <div class="card">
+        <div class="card-header">Pages</div>
+        <div class="card-body" id="itemList">
+        </div>
+      </div>
+      <div class="explain">
+        <div class="top-warp">
+          <a role="button" class="btn btn-primary btn-block" href="#" id="proposalCK">新建议</a>
+        </div>
+        <div class="explain-warp">
+          <div class="title">提示</div>
+          <div class="text-content">
+            <div>
+            1：看 README.md 文件，如使用过程中出现问题随时群内截图讨论。
+            </div>
+            <div>
+            2：尽量使用 pnpm。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
+      
       function loadJSON(callback) {
         var xhr = new XMLHttpRequest()
         xhr.overrideMimeType('application/json')
@@ -44,15 +233,67 @@
         xhr.send(null)
       }
 
+      function createItem(data) {
+        const item = document.createElement('div');
+        item.classList.add('item');
+
+        const itemLeft = document.createElement('div');
+        itemLeft.classList.add('item-left');
+
+        const itemRight = document.createElement('div');
+        itemRight.classList.add('item-right');
+
+        const itemTitle = document.createElement('div');
+        itemTitle.classList.add('item-title');
+
+        const descTitleSpan = document.createElement('span');
+        descTitleSpan.textContent = '描述：'
+
+        const descSpan = document.createElement('span');
+        descSpan.textContent = `${data.chunkName}`
+
+        const itemDetail = document.createElement('div');
+        itemDetail.classList.add('item-detail');
+        itemDetail.appendChild(descTitleSpan)
+        itemDetail.appendChild(descSpan)
+
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = '名称：'
+
+        const link = document.createElement('a');
+        link.href = `./${data.chunk}/#/`
+        link.textContent = `${data.chunk}`
+
+        itemRight.appendChild(itemTitle);
+        itemRight.appendChild(itemDetail);
+        itemTitle.appendChild(titleSpan);
+        itemTitle.appendChild(link);
+
+        item.appendChild(itemLeft);
+        item.appendChild(itemRight);
+
+        return item;
+      }
+
       loadJSON(function (data) {
         data.forEach((item) => {
-          const link = document.createElement('a')
-          link.href = `./${item.chunk}/#/`
-          link.textContent = `${item.chunk} | ${item.chunkName}` // 设置显示的文本内容
-          // 将 <a> 元素追加到容器元素中
-          document.body.appendChild(link)
+          console.log(item,'===')
+          const divNode = document.getElementById('itemList')
+          const el = createItem(item)
+          divNode.appendChild(el)
+
+          const janHr = document.createElement('div');
+          janHr.classList.add('jan-hr');
+          divNode.appendChild(janHr)
         })
       })
+
+      const proposalCK = document.getElementById('proposalCK');
+
+      proposalCK.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert('No!')
+      });
     </script>
   </body>
 </html>
