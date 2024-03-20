@@ -1,15 +1,14 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite' //组件自动按需引入
-import { VantResolver } from 'unplugin-vue-components/resolvers'
-// import autoImport from 'unplugin-auto-import/vite' //自动导入 Composition API 开启后会和老吴的样式冲突，暂时请不要开启
-import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
+// import Components from 'unplugin-vue-components/vite' //组件自动按需引入
+import AutoImport from 'unplugin-auto-import/vite' //自动导入 Composition API 开启后会和老吴的样式冲突，暂时请不要开启
+// import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
 import compression from 'vite-plugin-compression' //gzip/br 压缩
 import path from 'path'
 import chalk from 'chalk'
 
 // 引入多页面配置文件
-const project = require('./src/Project/multiPages.json')
+const pages = require('./src/pages/multiPages.json')
 // 获取npm run dev后缀 配置的环境变量
 const npm_config_page: string = process.env.npm_config_page || ''
 // 获取当前运行的脚本名称
@@ -23,7 +22,7 @@ const getEnterPages = () => {
     errorLog('请在命令行后以 `--page=页面名称` 格式指定页面名称！')
     process.exit()
   }
-  const filterArr = project.filter(
+  const filterArr = pages.filter(
     (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
   if (!filterArr.length && npm_lifecycle_event !== 'dev') {
@@ -31,13 +30,13 @@ const getEnterPages = () => {
     process.exit()
   }
   return {
-    [npm_config_page]: path.resolve(__dirname, `src/Project/${npm_config_page}/index.html`)
+    [npm_config_page]: path.resolve(__dirname, `src/pages/${npm_config_page}/index.html`)
   }
 }
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: path.resolve(__dirname, `./src/Project/${npm_config_page}`),
+  root: path.resolve(__dirname, `./src/pages/${npm_config_page}`),
   base: './',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
   server: {
@@ -56,21 +55,22 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    Components({
-      resolvers: [VantResolver()]
-    }),
-    // autoImport({
-    //   imports: ['vue', 'vue-router', 'pinia'],
-    //   dts: path.resolve(__dirname, './auto-import.d.ts'),
-    //   eslintrc: {
-    //     // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
-    //     enabled: false,
-    //     // 生成文件地址和名称
-    //     filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
-    //     globalsPropValue: true
-    //   }
+    // Components({
+    //   resolvers: [ElementPlusResolver()]
     // }),
-    visualizer(),
+    AutoImport({
+      imports: ['vue', 'vue-router', 'pinia'],
+      dts: path.resolve(__dirname, './auto-import.d.ts'),
+      eslintrc: {
+        // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
+        enabled: false,
+        // 生成文件地址和名称
+        filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
+        globalsPropValue: true
+      },
+      // resolvers: [ElementPlusResolver()]
+    }),
+    // visualizer(),
     // gzip格式
     compression({
       threshold: 1024 * 500, // 体积大于 threshold 才会被压缩,单位 b
@@ -85,16 +85,10 @@ export default defineConfig({
     //   deleteOriginFile: false
     // })
   ],
-  define: {
-    'process.env': {}
-  },
-  // define: {
-  //   'process.env.VITE_APP_BASE_URL': `"${process.env.VITE_APP_BASE_URL}"`
-  // },
   resolve: {
     alias: {
       '@': path.join(__dirname, './src'),
-      '@Project': path.join(__dirname, './src/Project')
+      '@pages': path.join(__dirname, './src/pages')
     }
   },
   build: {
