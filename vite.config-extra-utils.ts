@@ -78,10 +78,10 @@ export const printCurrentEnvirment = async (mode, env) => {
  * @param project 当前项目配置所有页面标识
  * @returns 当前页面标识
  */
-export const getCurrentPage = (project) => {
+export const getCurrentPage = (pages) => {
   // 当前项目只有一个页面时，从配置文件自动获取
-  if(project.length === 1)
-    return project?.[0]?.chunk
+  if(pages.length === 1)
+    return pages?.[0]?.chunk
 
   // 从命令行参数中获取（例如 npm run dev --page=xxx）
   // --page 会被 npm 自动存储为环境变量 npm_config_page
@@ -95,17 +95,17 @@ export const getCurrentPage = (project) => {
  */
 import chalk from 'chalk'
 import path from 'path'
-export const getEnterPages = (npm_config_page, project) => {
+export const getEnterPages = (npm_config_page, pages) => {
   // 获取当前运行的脚本名称
   const npm_lifecycle_event: string = process.env.npm_lifecycle_event || ''
   // 命令行报错提示
   const errorLog = (error) => console.log(chalk.red(`${error}`))
 
   if (!npm_config_page && npm_lifecycle_event !== 'dev') {
-    errorLog('请在命令行后以 `--page=页面名称` 格式指定页面名称！')
+    errorLog('存在多个页面入口，请在命令行后以 `--page=页面名称` 格式指定页面名称！')
     process.exit()
   }
-  const filterArr = project.filter(
+  const filterArr = pages.filter(
     (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
   if (!filterArr.length && npm_lifecycle_event !== 'dev') {

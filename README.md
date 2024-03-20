@@ -112,33 +112,37 @@ npm run new:page --ts
 
 ### 🪴 打包
 
-> **正式环境打包**
-
-单页面打包：
+指定页面打包：
 
 ```js
-npm run build --page=页面名称
+npm run build:dev -page=页面名称
+npm run build:test -page=页面名称
+npm run build:pre -page=页面名称
+npm run build:pro -page=页面名称
+```
+
+单个页面打包，当`multiPages.json`里面只配置了一个页面时，无需指定页面：
+
+```js
+npm run build:dev
+npm run build:test
+npm run build:pre
+npm run build:pro
 ```
 
 全量打包：
 
 ```js
-npm run build:all
+npm run build:all:dev
+npm run build:all:test
+npm run build:all:pre
+npm run build:all:pro
 ```
 
-> **测试环境打包**
-
-单页面打包：
-
-```js
-npm run build:test --page=页面名称
-```
-
-全量打包：
-
-```js
-npm run build:all test
-```
+注：
+- 当`multiPages.json`里面只配置了一个页面时，打包产物会在 `/dist` 目录下
+- 当`multiPages.json`里面配置多个页面时，打包的产物会在 `/dist` 目录下创建对应的子目录，比如 `/dist/page1`
+- 多页面打包时，会有子目录，这时候要注意在 ngnix 配置路径时加上子目录
 
 ## 说在最后 💝
 以我们的工程项目来说是不需要全量打包的，自动化部署针对每一个单独包进行打包，打好的项目包会有项目名称目录，注意部署时要配置这个目录名称

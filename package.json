@@ -4,13 +4,18 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --mode development",
-    "build": "vite build",
-    "build:test": "vite build --mode development",
-    "build:all": "node ./scripts/build.cjs",
     "new:page": "node ./scripts/index.mjs",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:script": "eslint --fix --ext .js --ext .ts --ext .vue src/",
     "lint:prettierrc": "prettier --write .",
+    "build:all:dev": "node ./scripts/build.cjs development",
+    "build:all:test": "node ./scripts/build.cjs test",
+    "build:all:pre": "node ./scripts/build.cjs prediction",
+    "build:all:pro": "node ./scripts/build.cjs production",
+    "build:development": "vite build --mode development",
+    "build:test": "vite build --mode test",
+    "build:prediction": "vite build --mode prediction",
+    "build:production": "vite build --mode production",
     "preview": "vite preview"
   },
   "husky": {
