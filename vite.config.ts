@@ -1,8 +1,9 @@
 import { defineConfig, loadEnv } from 'vite'
 import type { UserConfig, ConfigEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import Components from 'unplugin-vue-components/vite' //组件自动按需引入
+import Components from 'unplugin-vue-components/vite' //组件自动按需引入
 import AutoImport from 'unplugin-auto-import/vite' //自动导入 Composition API 开启后会和老吴的样式冲突，暂时请不要开启
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
 import compression from 'vite-plugin-compression' //gzip/br 压缩
 import path from 'path'
@@ -39,11 +40,20 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         }
       }
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@cbim-epc-magic/styles/src/element-plus-theme.scss" as *;`,
+        },
+      },
+    },
     plugins: [
       vue(),
-      // Components({
-      //   resolvers: [ElementPlusResolver()]
-      // }),
+      Components({
+        resolvers: [ElementPlusResolver({
+          importStyle: 'sass',
+        })]
+      }),
       AutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
         dts: path.resolve(__dirname, './auto-import.d.ts'),
@@ -54,7 +64,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
           filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
           globalsPropValue: true
         },
-        // resolvers: [ElementPlusResolver()]
+        resolvers: [ElementPlusResolver({
+          importStyle: 'sass',
+        })],
       }),
       // visualizer(),
       // gzip格式
