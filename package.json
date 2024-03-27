@@ -31,7 +31,7 @@
     ]
   },
   "dependencies": {
-    "@cbim-epc-magic/components": "^1.1.6",
+    "@cbim-epc-magic/components": "^1.1.7",
     "@cbim-epc-magic/styles": "^1.1.3",
     "@cbim-epc-magic/utils": "^2.0.4",
     "@element-plus/icons-vue": "^2.3.1",

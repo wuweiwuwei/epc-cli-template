@@ -9,8 +9,8 @@ overrides:
 
 dependencies:
   '@cbim-epc-magic/components':
-    specifier: ^1.1.6
-    version: 1.1.6(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21)
+    specifier: ^1.1.7
+    version: 1.1.7(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21)
   '@cbim-epc-magic/styles':
     specifier: ^1.1.3
     version: 1.1.3(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21)
@@ -312,8 +312,8 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@cbim-epc-magic/components@1.1.6(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21):
-    resolution: {integrity: sha512-wLG6dUbmidzVOb620CPwH3zXMZzV/45edTmr8Ef55ToceezEUqOsZYp59LqYEA3PVHzbKhjIrl3S9zgLwtqLzQ==}
+  /@cbim-epc-magic/components@1.1.7(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21):
+    resolution: {integrity: sha512-HRrTAjrHIrCWmWN65jGf2+RVnswda20LfkCwbtSfSujoL+PsCaQAyJx44BOkbRc0G9VnuMUG6jujKAz6gZOTNA==}
     peerDependencies:
       '@element-plus/icons-vue': ^2.3.1
       element-plus: ^2.5.2
@@ -340,7 +340,7 @@ packages:
   /@cbim-epc-magic/styles@1.1.3(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-2PVUUlzG+7f93ktFZ135R+oqYlrzr/lNi3qvz2DBue5YgQSVbbLMpwG57ftxbTxsmruGgP2TjfAnjOk1bl9OYg==}
     dependencies:
-      '@cbim-epc-magic/components': 1.1.6(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21)
+      '@cbim-epc-magic/components': 1.1.7(@babel/core@7.24.3)(@element-plus/icons-vue@2.3.1)(@vue/compiler-sfc@3.4.21)(element-plus@2.6.2)(vue-router@4.3.0)(vue@3.4.21)
       gulp-cache: 0.4.6
     transitivePeerDependencies:
       - '@babel/core'
